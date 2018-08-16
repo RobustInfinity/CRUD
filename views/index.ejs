@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1><%= title%></h1>
+    <form action="/add" method="post">
+        <input type="text" name="name" id="name">
+        <input type="text" name="age" id="age">
+        <button type="submit">ADD</button>
+    </form>
+    <table>
+        <%if(list.length > 0){%>
+        <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+        </tr>
+        <%for(var i = 0; i < list.length; i++){%>
+        <tr>
+            <th><%= list[i].name%></th>
+            <th><%= list[i].age%></th>
+            <th>
+                <form action="/delete" method="post">
+                    <button type="submit">DELETE</button>
+                </form>
+                <form action="/update" method="post">
+                    <button type="submit">UPDATE</button>
+                </form>
+            </th>
+        </tr>
+            <%}%>
+        <%}%>
+    </table>
+</body>
+</html>
