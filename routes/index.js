@@ -25,5 +25,7 @@ router.post('/update', (request, response)=>{
 })
 
 router.post('/delete',(request, response)=>{
-  response.render('index',{title: 'DELETE', list: []})
+  console.log(request.body._id + ' body');
+ 
+  list.delete(request, response);
 })

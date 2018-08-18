@@ -21,6 +21,17 @@ var list = {
                 console.log(docs);
                 response.send(docs)
             })
+    },
+    delete : function(request, response){
+            User.findOneAndRemove({"_id" : request.body._id}, (err, result)=>{
+                if(result){
+                    response.send(result);
+                    console.log(result)
+                }
+                if(err){
+                    console.log(err);
+                }
+            })
     }
 }
 
